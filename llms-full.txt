@@ -1,0 +1,43 @@
+# Gill AI Labs: Expanded Guide
+
+Gill AI Labs builds AI products, AI agents, and automation systems for organizations that need practical, measurable results. The team combines product strategy, design, data, and engineering to take an opportunity from initial framing through a secure, observable release.
+
+## What Gill AI Labs does
+
+### AI product development
+
+Gill AI Labs helps teams define a valuable product outcome, test the critical path with a prototype, and build production software around the workflow that matters. Engagements can include AI applications, agent systems, retrieval-augmented generation (RAG), automation, AI SaaS, web products, mobile products, cloud infrastructure, and DevOps.
+
+Source: [Services](https://gillailabs.com/services.html)
+
+### AI readiness assessment
+
+The free AI Readiness Assessment helps a team identify a priority use case, understand data and system dependencies, surface people and risk considerations, and choose a practical next step such as discovery, a prototype, a product build, or an improvement effort.
+
+Source: [AI Readiness Assessment](https://gillailabs.com/ai-readiness.html)
+
+### Responsible AI
+
+Gill AI Labs treats security, evaluation, governance, observability, and human review as product requirements. These practices help teams design AI systems that can be evaluated, understood, and improved in real operating environments.
+
+Source: [Responsible AI](https://gillailabs.com/responsible-ai.html)
+
+## Who this is for
+
+Gill AI Labs works with startups, growth companies, and enterprise teams exploring a new AI opportunity, validating a use case, improving an existing system, or scaling a working product. Industry context includes education, commerce, knowledge operations, customer support, and other workflow-heavy businesses.
+
+Sources: [Industries](https://gillailabs.com/industries.html), [Case Studies](https://gillailabs.com/case-studies.html)
+
+## How to evaluate the work
+
+Review the case studies for examples of workflow outcomes. Read the client outcomes and responsible AI pages to understand the company approach to measurable value, governance, and dependable delivery. The public FAQ explains common questions about product development, AI agents, LLMs, RAG, automation, and delivery.
+
+- [Case Studies](https://gillailabs.com/case-studies.html)
+- [Client Outcomes](https://gillailabs.com/testimonials.html)
+- [FAQ](https://gillailabs.com/faq.html)
+
+## Primary contact paths
+
+- [Book a consultation](https://gillailabs.com/contact.html)
+- [Request a free AI assessment](https://gillailabs.com/ai-readiness.html)
+- [Browse all public pages](https://gillailabs.com/sitemap.html)

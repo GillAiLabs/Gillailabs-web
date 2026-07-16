@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Machine-readable guide for AI assistants and retrieval systems:
+# https://gillailabs.com/llms.txt
+Sitemap: https://gillailabs.com/sitemap.xml

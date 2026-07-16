@@ -1,0 +1,30 @@
+# Gill AI Labs
+
+> Gill AI Labs is an AI product development company that designs, builds, and scales secure AI products, agents, and automation systems for measurable business outcomes.
+
+## Core services
+
+- [AI Product Development](https://gillailabs.com/services.html): Strategy, prototyping, production AI software, agent systems, automation, AI SaaS, web, mobile, cloud, and DevOps.
+- [AI Solutions](https://gillailabs.com/ai-solutions.html): Practical AI capabilities for support, sales, shopping, education, knowledge operations, analytics, and workflow automation.
+- [AI Readiness Assessment](https://gillailabs.com/ai-readiness.html): A free assessment to identify a valuable use case, readiness signals, risks, and a practical next step.
+- [Responsible AI](https://gillailabs.com/responsible-ai.html): Security, evaluation, governance, observability, and human oversight practices.
+
+## Evidence and expertise
+
+- [Case Studies](https://gillailabs.com/case-studies.html)
+- [Client Outcomes](https://gillailabs.com/testimonials.html)
+- [Technology Stack](https://gillailabs.com/technologies.html)
+- [AI Labs](https://gillailabs.com/ai-labs.html)
+
+## Helpful resources
+
+- [AI Insights](https://gillailabs.com/blog.html)
+- [AI Glossary](https://gillailabs.com/ai-glossary.html)
+- [Tools and Templates](https://gillailabs.com/tools-templates.html)
+- [FAQ](https://gillailabs.com/faq.html)
+
+## Contact
+
+- [Book a consultation](https://gillailabs.com/contact.html)
+- [Website sitemap](https://gillailabs.com/sitemap.xml)
+- [Expanded guide](https://gillailabs.com/llms-full.txt)
