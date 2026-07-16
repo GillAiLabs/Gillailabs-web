@@ -87,7 +87,7 @@ document.addEventListener('submit', (event) => {
 
 const themeToggle = document.querySelector('.theme-toggle');
 const savedTheme = localStorage.getItem('gill-theme');
-if (savedTheme) document.documentElement.dataset.theme = savedTheme;
+document.documentElement.dataset.theme = savedTheme === 'dark' ? 'dark' : 'light';
 themeToggle.addEventListener('click', () => {
   const nextTheme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
   document.documentElement.dataset.theme = nextTheme;
