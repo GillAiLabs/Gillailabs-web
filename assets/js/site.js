@@ -19,6 +19,9 @@ const footer = `<footer class="site-footer"><div class="container"><aside class=
 
 document.querySelector('[data-site-header]').innerHTML = trustedHTML(header);
 document.querySelector('[data-site-footer]').innerHTML = trustedHTML(footer);
+document.querySelectorAll('.brand[aria-label="Gill AI Labs home"]').forEach((brand) => {
+  brand.removeAttribute('aria-label');
+});
 document.querySelector('[data-year]').textContent = new Date().getFullYear();
 
 const footerBlurb = document.querySelector('.footer-blurb');
