@@ -23,6 +23,9 @@ const footer = `<footer class="site-footer"><div class="container"><aside class=
 
 document.querySelector('[data-site-header]').innerHTML = trustedHTML(header);
 document.querySelector('[data-site-footer]').innerHTML = trustedHTML(footer);
+document.querySelectorAll('.brand-mark').forEach((mark) => {
+  mark.outerHTML = '<img class="brand-mark" src="assets/images/gill-ai-labs-mark.svg" width="32" height="32" alt="">';
+});
 document.querySelectorAll('.brand[aria-label="Gill AI Labs home"]').forEach((brand) => {
   brand.removeAttribute('aria-label');
 });

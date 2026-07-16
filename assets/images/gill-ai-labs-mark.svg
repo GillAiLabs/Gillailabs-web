@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Gill AI Labs">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Gill AI Labs G monogram</title>
+  <desc id="desc">A deep ink G with a coral growth arrow, representing enterprise AI systems and business momentum.</desc>
   <rect width="64" height="64" rx="15" fill="#1b1b2b"/>
   <path fill="#ff6b3d" d="M32 10a22 22 0 1 0 18.9 33.3V30.5H31.2v8.3h10.4A13.7 13.7 0 1 1 32 18.3c3.5 0 6.8 1.3 9.3 3.6l5.6-6A21.7 21.7 0 0 0 32 10Z"/>
   <path fill="#f7d9ba" d="m36.7 37.2 4.1-4.1 4.1 4.1-1.7 1.7-2.4-2.4-2.4 2.4-1.7-1.7Zm-8.8-1.5a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm7.1-3.1a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>
