@@ -2,7 +2,8 @@ const currentPage = document.body.dataset.page || "";
 const designSystem = document.createElement('link');
 designSystem.rel = 'stylesheet';
 designSystem.href = 'assets/css/ai-blueprint.css';
-document.head.append(designSystem);
+const mainStylesheet = document.querySelector('link[href="assets/css/styles.css"]');
+document.head.insertBefore(designSystem, mainStylesheet);
 const trustedTypesPolicy = window.trustedTypes?.createPolicy('gill-ai-labs', {
   createHTML: (value) => value
 });
@@ -94,7 +95,7 @@ document.addEventListener('submit', (event) => {
 
 const themeToggle = document.querySelector('.theme-toggle');
 const savedTheme = localStorage.getItem('gill-theme');
-document.documentElement.dataset.theme = savedTheme === 'light' ? 'light' : 'dark';
+document.documentElement.dataset.theme = savedTheme === 'dark' ? 'dark' : 'light';
 themeToggle.addEventListener('click', () => {
   const nextTheme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
   document.documentElement.dataset.theme = nextTheme;
