@@ -1,4 +1,8 @@
 const currentPage = document.body.dataset.page || "";
+const trustedTypesPolicy = window.trustedTypes?.createPolicy('gill-ai-labs', {
+  createHTML: (value) => value
+});
+const trustedHTML = (value) => trustedTypesPolicy ? trustedTypesPolicy.createHTML(value) : value;
 const links = [
   ["Services", "services.html"], ["AI Solutions", "ai-solutions.html"], ["Industries", "industries.html"], ["Case Studies", "case-studies.html"], ["Insights", "blog.html"], ["About", "about.html"]
 ];
@@ -13,8 +17,8 @@ function navigation() {
 const header = `<header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html" aria-label="Gill AI Labs home"><span class="brand-mark" aria-hidden="true">G</span>Gill AI Labs</a><nav class="nav-links" id="primary-navigation" aria-label="Primary navigation">${navigation()}</nav><div class="nav-actions"><button class="icon-button theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme">◐</button><a class="button button-secondary nav-consult" href="contact.html">Book a call</a><a class="button button-primary nav-assessment" href="ai-readiness.html">Free assessment</a><button class="icon-button menu-toggle" type="button" aria-label="Open navigation" aria-controls="primary-navigation" aria-expanded="false">☰</button></div></div></header>`;
 const footer = `<footer class="site-footer"><div class="container"><aside class="footer-conversion" aria-labelledby="footer-conversion-title"><div><p class="eyebrow">A practical next step</p><h2 id="footer-conversion-title">Get the AI Readiness Checklist.</h2><p>Use our short planning guide to identify a valuable use case, the evidence to gather, and the risks to address before you build.</p></div><form class="footer-signup" action="thank-you.html" method="get"><label for="footer-email">Work email</label><div><input id="footer-email" name="email" type="email" required autocomplete="email" placeholder="you@company.com"><button class="button button-primary" type="submit">Send checklist <span aria-hidden="true">→</span></button></div><small>Practical notes only. Read our <a href="privacy-policy.html">privacy policy</a>.</small></form></aside><div class="footer-grid"><div><a class="brand" href="index.html" aria-label="Gill AI Labs home"><span class="brand-mark" aria-hidden="true">G</span>Gill AI Labs</a><p class="footer-blurb">Building AI products that transform businesses through thoughtful product strategy and dependable engineering.</p><ul class="trust-list" aria-label="Gill AI Labs trust commitments"><li>Senior-led delivery</li><li>Responsible AI</li><li>Privacy-aware</li></ul></div><div><p class="footer-title">Capabilities</p><div class="footer-links"><a href="services.html">AI Product Development</a><a href="ai-solutions.html">AI Solutions</a><a href="process.html">Our Process</a><a href="ai-readiness.html">AI Readiness Assessment</a><a href="technologies.html">Technology Stack</a><a href="pricing.html">Engagement Models</a></div></div><div><p class="footer-title">Company and Trust</p><div class="footer-links"><a href="about.html">About us</a><a href="leadership.html">Leadership</a><a href="responsible-ai.html">Responsible AI</a><a href="case-studies.html">Case Studies</a><a href="testimonials.html">Client Outcomes</a><a href="partners.html">Partner Ecosystem</a><a href="partner-program.html">Partner Program</a><a href="careers.html">Careers</a><a href="contact.html">Book a consultation</a></div></div><div><p class="footer-title">Learn and Connect</p><div class="footer-links"><a href="ai-labs.html">AI Labs</a><a href="blog.html">AI Insights</a><a href="ai-glossary.html">AI Glossary</a><a href="tools-templates.html">Tools and Templates</a><a href="resources.html">Resources</a><a href="events.html">Events and Workshops</a><a href="press.html">Press and Media</a><a href="faq.html">FAQ</a><a href="sitemap.html">Sitemap</a></div></div></div><div class="footer-bottom"><span>© <span data-year></span> Gill AI Labs. All rights reserved.</span><div class="footer-legal"><a href="privacy-policy.html">Privacy</a><a href="terms-conditions.html">Terms</a><a href="cookie-policy.html">Cookies</a></div></div></div></footer>`;
 
-document.querySelector('[data-site-header]').innerHTML = header;
-document.querySelector('[data-site-footer]').innerHTML = footer;
+document.querySelector('[data-site-header]').innerHTML = trustedHTML(header);
+document.querySelector('[data-site-footer]').innerHTML = trustedHTML(footer);
 document.querySelector('[data-year]').textContent = new Date().getFullYear();
 
 const footerBlurb = document.querySelector('.footer-blurb');
@@ -49,10 +53,6 @@ const enquirySubjects = {
   'partner-program': 'Partner programme enquiry',
   careers: 'Career enquiry'
 };
-const emailForms = document.querySelectorAll('form[action="thank-you.html"]');
-emailForms.forEach((form) => {
-  form.action = `mailto:${enquiryEmail}`;
-});
 
 const enquirySubject = (form) => {
   if (form.classList.contains('footer-signup') || form.closest('.lead-modal')) {
@@ -71,8 +71,7 @@ const enquiryFieldLabel = (form, fieldName) => {
 document.addEventListener('submit', (event) => {
   const form = event.target;
   if (!(form instanceof HTMLFormElement)) return;
-  const action = form.getAttribute('action');
-  if (action !== 'thank-you.html' && !action?.startsWith('mailto:')) return;
+  if (form.getAttribute('action') !== 'thank-you.html') return;
   if (!form.reportValidity()) return;
 
   event.preventDefault();
@@ -154,7 +153,7 @@ const heroImages = {
 
 const pageHero = document.querySelector('.page-hero');
 if (pageHero && heroImages[currentPage]) {
-  pageHero.insertAdjacentHTML('beforeend', `<img class="hero-art" src="${heroImages[currentPage]}" alt="" aria-hidden="true">`);
+  pageHero.insertAdjacentHTML('beforeend', trustedHTML(`<img class="hero-art" src="${heroImages[currentPage]}" alt="" aria-hidden="true">`));
 }
 
 const motionTargets = document.querySelectorAll('.service-card,.case-card,.info-card,.article-card,.service-detail,.industry-card,.tech-group,.process-list li,.feature-list article,.case-study,.resource-banner');
@@ -194,8 +193,7 @@ const showLeadModal = () => {
   if (sessionStorage.getItem('gill-lead-modal')) return;
   sessionStorage.setItem('gill-lead-modal', 'seen');
   leadModalTrigger = document.activeElement instanceof HTMLElement ? document.activeElement : undefined;
-  document.body.insertAdjacentHTML('beforeend', `<div class="lead-modal" role="dialog" aria-modal="true" aria-labelledby="lead-modal-title" aria-describedby="lead-modal-description"><div class="lead-modal-card"><button class="lead-modal-close" type="button" aria-label="Close offer">×</button><p class="eyebrow">AI opportunity brief</p><h2 id="lead-modal-title">Before you go, get a clearer next step.</h2><p id="lead-modal-description">Share your work email and we will send the AI Readiness Checklist.</p><form action="thank-you.html" method="get"><label class="sr-only" for="lead-email">Work email</label><input id="lead-email" required type="email" name="email" placeholder="you@company.com" autocomplete="email"><button class="button button-primary" type="submit">Send checklist <span aria-hidden="true">→</span></button></form></div></div>`);
-  document.querySelector('.lead-modal form').action = `mailto:${enquiryEmail}`;
+  document.body.insertAdjacentHTML('beforeend', trustedHTML(`<div class="lead-modal" role="dialog" aria-modal="true" aria-labelledby="lead-modal-title" aria-describedby="lead-modal-description"><div class="lead-modal-card"><button class="lead-modal-close" type="button" aria-label="Close offer">×</button><p class="eyebrow">AI opportunity brief</p><h2 id="lead-modal-title">Before you go, get a clearer next step.</h2><p id="lead-modal-description">Share your work email and we will send the AI Readiness Checklist.</p><form action="thank-you.html" method="get"><label class="sr-only" for="lead-email">Work email</label><input id="lead-email" required type="email" name="email" placeholder="you@company.com" autocomplete="email"><button class="button button-primary" type="submit">Send checklist <span aria-hidden="true">→</span></button></form></div></div>`));
   document.querySelector('.lead-modal-close')?.focus();
   document.querySelector('.lead-modal-close')?.addEventListener('click', closeLeadModal);
   document.querySelector('.lead-modal')?.addEventListener('click', (event) => {
