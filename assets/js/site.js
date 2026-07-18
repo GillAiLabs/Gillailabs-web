@@ -74,8 +74,8 @@ const enquirySubject = (form) => {
 
 const enquiryFieldLabel = (form, fieldName) => {
   const control = [...form.elements].find((element) => element.name === fieldName);
-  return control?.labels?.[0]?.textContent.trim()
-    || control?.closest('label')?.querySelector('span')?.textContent.trim()
+  return control?.closest('label')?.querySelector('span')?.textContent.trim()
+    || control?.labels?.[0]?.textContent.trim()
     || fieldName.replace(/[-_]/g, ' ');
 };
 
