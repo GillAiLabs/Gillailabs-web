@@ -238,3 +238,7 @@ if (!window.matchMedia('(pointer: coarse)').matches) {
     if (event.clientY < 8) showLeadModal();
   }, { once: true });
 }
+
+const companyFooterLinks = [...document.querySelectorAll('.footer-grid .footer-links')]
+  .find((linksGroup) => linksGroup.previousElementSibling?.textContent.trim() === 'Company and Trust');
+companyFooterLinks?.insertAdjacentHTML('afterbegin', trustedHTML('<a href="team.html">Our Team</a>'));
